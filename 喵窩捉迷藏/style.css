@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -61,7 +62,7 @@ button:hover {
 /* 鎖定圖片容器最大高度 */
 .grid-wrapper {
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 0;
   right: 0;
   height: calc(100vh - 130px);
@@ -79,7 +80,6 @@ button:hover {
   justify-content: center;
   align-content: center;
   gap: 1px;
-  overflow: hidden;
   padding: 20px;
 }
 
@@ -87,7 +87,7 @@ button:hover {
   width: 100%;
   height: 100%;
   max-width: 100%;
-  max-height: 95%;
+  max-height: 100%;
   object-fit: contain;
   aspect-ratio: 1 / 1;
   box-sizing: border-box;
