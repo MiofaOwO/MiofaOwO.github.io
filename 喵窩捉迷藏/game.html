@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遊戲開始!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('assets/bg/default.png');">
+
+  <div class="game-container">
+    <div class="timer">⏳ 時間：<span id="timer"></span></div>
+    <div class="score">🏆 得分：<span id="score">0</span></div>
+    <div class="target-display">請點選圖案：<img id="targetImage" src="" alt="目標圖示" width="50" height="50" /></div>
+
+    <!-- 新增 grid-wrapper 包住 grid -->
+    <div class="grid-wrapper">
+      <div id="gridContainer" class="grid"></div>
+    </div>
+  </div>
+
+  <!-- 結果畫面 -->
+  <div id="resultScreen" class="result-container" style="display: none;">
+    <h1>🎉 遊戲結束</h1>
+    <p>⏱️ 時間限制：<span id="resultMode"></span></p>
+    <p>🎯 目標圖案：<span id="resultSame"></span></p>
+    <p>🐱 圖片分類：<span id="resultCategory"></span></p>
+    <p>✅ 過關數：<span id="resultLevel"></span></p>
+    <p>🏆 總得分：<span id="resultScore"></span></p>
+    <button onclick="location.href='index.html'">回到開始</button>
+  </div>
+
+  <!-- 音效 -->
+  <audio id="clickSound" src="assets/audio/click.mp3"></audio>
+  <audio id="correctSound" src="assets/audio/correct.mp3"></audio>
+  <audio id="wrongSound" src="assets/audio/wrong.mp3"></audio>
+  <audio id="bgMusicGame" src="assets/audio/game.mp3" autoplay loop></audio>
+  <audio id="bgMusicEnd" src="assets/audio/end.mp3"></audio>
+
+  <!-- 遊戲邏輯 -->
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
