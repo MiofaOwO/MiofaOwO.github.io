@@ -65,8 +65,8 @@ button:hover {
   top: 30px;
   left: 0;
   right: 0;
-  height: calc(100vh - 100px);
-  
+  height: calc(100vh - 30px);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
