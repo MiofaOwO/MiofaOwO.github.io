@@ -70,7 +70,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px; /* 往下推整個網格區域 */
+  padding-top: 200px; /* 往下推整個網格區域 */
 }
 
 .grid {
