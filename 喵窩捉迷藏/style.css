@@ -80,7 +80,7 @@ button:hover {
   justify-content: center;
   align-content: center;
   gap: 1px;
-  overflow: hidden;
+  padding: 20px;
 }
 
 .grid img {
