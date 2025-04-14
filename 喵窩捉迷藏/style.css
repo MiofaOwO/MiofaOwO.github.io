@@ -65,12 +65,12 @@ button:hover {
   top: 0px;
   left: 0;
   right: 0;
-  height: calc(100vh - 0px);
+  height: calc(100vh - 100px);
   
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 0px; /* 往下推整個網格區域 */
+  padding-top: 3px; /* 往下推整個網格區域 */
 }
 
 .grid {
