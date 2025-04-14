@@ -76,9 +76,9 @@ function getNextRectangularNumber(startingFrom) {
 }
 
 function getTotalImagesForLevel(level) {
-  if (level === 1) return 6;
+  if (level === 1) return 12;
   const increaseSteps = Math.floor((level - 1) / 20);
-  return getNextRectangularNumber(increaseSteps * 12);
+  return getNextRectangularNumber(12 + increaseSteps * 12);
 }
 
 function startLevel() {
