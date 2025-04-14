@@ -62,10 +62,10 @@ button:hover {
 /* 鎖定圖片容器最大高度 */
 .grid-wrapper {
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 0;
   right: 0;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 100px);
   overflow: hidden;
   display: flex;
   align-items: center;
