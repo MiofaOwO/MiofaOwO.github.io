@@ -3,12 +3,14 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>打地鼠遊戲</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    html, body {
+  touch-action: manipulation; height: 100%; }
     body {
+  touch-action: manipulation;
       font-family: sans-serif;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
@@ -266,7 +268,17 @@
     });
     document.addEventListener("mousedown", () => hammer.classList.add("hit"));
     document.addEventListener("mouseup", () => hammer.classList.remove("hit"));
-  </script>
+  
+let lastTouch = 0;
+document.addEventListener("touchstart", function (e) {
+  const now = new Date().getTime();
+  if (now - lastTouch <= 300) {
+    e.preventDefault();
+  }
+  lastTouch = now;
+}, { passive: false });
+
+</script>
 </body>
 </html>
 
