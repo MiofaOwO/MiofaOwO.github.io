@@ -4,23 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>夢喵地鼠機</title>
+  <title>打地鼠遊戲</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, 
-body {
+    html, body {
+  touch-action: manipulation; height: 100%; }
+    body {
   touch-action: manipulation;
-  cursor: auto;
- height: 100%; }
-    
-body {
-  touch-action: manipulation;
-  cursor: auto;
-
       font-family: sans-serif;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
-      cursor: none;
+      cursor: auto;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -106,6 +100,7 @@ body {
       opacity: 1;
     }
     #hammer {
+  display: none;
       position: fixed;
       width: 80px;
       height: 80px;
@@ -121,21 +116,15 @@ body {
 </head>
 <body>
   <div id="start-screen">
-    <h1>夢喵地鼠機</h1>
+    <h1>打地鼠遊戲</h1>
     <label for="difficulty">選擇難度（1-99）:</label>
     <input type="number" id="difficulty" min="1" max="99" value="1" />
     <button onclick="startGame()">開始遊戲</button>
-    <h3>敲夢喵+100分  敲恩宇-50分</h3>
   </div>
 
-  
-<div id="hud" style="justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-  <div style="position: absolute; top: 10px; left: 20px;">最高分數：<span id="high-score">0</span></div>
-  <div style="margin: 0 auto;">分數：<span id="score">0</span></div>
-  <div style="position: absolute; top: 10px; right: 20px;">時間：<span id="time">  </span>s</div>
-
-    
-
+  <div id="hud">
+    <div>分數：<span id="score">0</span></div>
+    <div>時間：<span id="time">60</span>s</div>
   </div>
 
   <div id="game">
@@ -202,7 +191,12 @@ hole.appendChild(moleMask);
       });
     }
 
-    function startGame() {
+    
+function startGame() {
+  document.body.style.cursor = "none";
+  const hammer = document.getElementById("hammer");
+  if (hammer) hammer.style.display = "block";
+
       difficulty = Math.max(1, Math.min(99, parseInt(difficultyInput.value)));
       score = 0;
       timeLeft = 60;
@@ -231,7 +225,12 @@ hole.appendChild(moleMask);
       highScoreDisplay.textContent = localStorage.getItem("highscore");
     }
 
-    function goToStart() {
+    
+function goToStart() {
+  document.body.style.cursor = "auto";
+  const hammer = document.getElementById("hammer");
+  if (hammer) hammer.style.display = "none";
+
       endScreen.style.display = "none";
       startScreen.style.display = "flex";
     }
@@ -294,23 +293,7 @@ document.addEventListener("touchstart", function (e) {
 }, { passive: false });
 
 </script>
-
-<audio id="bgm" src="bgm.mp3" loop></audio>
-<script>
-  const bgm = document.getElementById("bgm");
-  function startGame() {
-    ...
-    bgm.play();
-    ...
-  }
-  function goToStart() {
-    ...
-    bgm.pause();
-    bgm.currentTime = 0;
-  }
-</script>
 </body>
-
 </html>
 
   <style>
@@ -348,18 +331,3 @@ document.addEventListener("touchstart", function (e) {
       z-index: 4;
     }
   </style>
-
-<script>
-const body = document.body;
-function startGame() {
-  ...
-  body.style.cursor = "none";
-  hammer.style.display = "block";
-  ...
-}
-function goToStart() {
-  ...
-  body.style.cursor = "auto";
-  hammer.style.display = "none";
-}
-</script>
