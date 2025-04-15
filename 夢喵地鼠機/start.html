@@ -116,7 +116,8 @@
 </head>
 <body>
   <div id="start-screen">
-    <h1>打地鼠遊戲</h1>
+    <h1>夢喵地鼠機</h1>
+    <h3>敲中夢喵+100分 敲中恩宇-200分</h3>
     <label for="difficulty">選擇難度（1-99）:</label>
     <input type="number" id="difficulty" min="1" max="99" value="1" />
     <button onclick="startGame()">開始遊戲</button>
@@ -263,7 +264,7 @@ function goToStart() {
       mole.style.transform = "translate(-50%, 100%)";
       mole.style.opacity = "0";
       if (mole.dataset.fake === "true") {
-        score -= 50;
+        score -= 200;
         missSound.play();
       } else {
         score += 100;
