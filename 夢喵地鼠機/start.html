@@ -181,7 +181,10 @@
           mole.className = "mole";
           mole.addEventListener("click", () => hitMole(mole));
 
-          hole.appendChild(mole);
+          const moleMask = document.createElement("div");
+moleMask.className = "mole-mask";
+moleMask.appendChild(mole);
+hole.appendChild(moleMask);
           row.appendChild(hole);
         }
       });
@@ -283,7 +286,30 @@ document.addEventListener("touchstart", function (e) {
 </html>
 
   <style>
-    .hole-img {
+    
+
+.mole-mask {
+  position: absolute;
+  top: 15%;
+  left: -12%;
+  width: 130%;
+  height:110%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.hole-cover {
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translateX(-50%) scale(3);
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hole-img {
       position: absolute;
       bottom: -35%;
       left: 50%;
