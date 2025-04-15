@@ -181,7 +181,7 @@
           hole.className = "hole";
 
           const mole = document.createElement("img");
-          mole.src = Math.random() > 0.2 ? "mole.png" : "fake-mole.png";
+          mole.src = Math.random() > 0.3 ? "mole.png" : "fake-mole.png";
           mole.className = "mole";
           mole.addEventListener("click", () => hitMole(mole));
 
@@ -244,13 +244,13 @@ function goToStart() {
 
     function showMole() {
       const moles = document.querySelectorAll(".mole");
-      const count = Math.floor(Math.random() * 3) + 2;
+      const count = Math.floor(Math.random() * 5) + 2;
       const hiddenMoles = Array.from(moles).filter(m => !m.classList.contains("up"));
       const shuffled = hiddenMoles.sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, count);
 
       selected.forEach((mole) => {
-        mole.src = Math.random() > 0.2 ? "mole.png" : "fake-mole.png";
+        mole.src = Math.random() > 0.3 ? "mole.png" : "fake-mole.png";
         mole.dataset.fake = mole.src.includes("fake") ? "true" : "false";
         mole.classList.add("up");
         mole.style.transform = "translate(-50%, -20%)";
